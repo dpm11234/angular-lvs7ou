@@ -1,0 +1,15 @@
+<h1>Duong Phuoc Mau</h1>
+
+<h3>Cau 8, 9: </h3>
+<input type="text" id="searchInput" #searchInput>
+<select #selectInput>
+  <option *ngFor="let type of types" [value]="type">
+    {{ type }}
+  </option>
+</select>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.name }}
+  </li>
+</ul>
