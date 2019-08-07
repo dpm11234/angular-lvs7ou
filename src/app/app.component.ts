@@ -60,7 +60,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     // Câu 3
     console.log('Cau 3:');
     from(this.arr).pipe(
-      reduce((total: number, number: number) => total + number, 0)
+      mergeMap((num: number) => range(1, num).pipe(
+        reduce((total: number, number: number) => total + number, 0)
+      )),
+      toArray()
     ).subscribe(total => console.log(total));
 
     // Câu 4
